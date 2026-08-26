@@ -1,0 +1,30 @@
+# Secrets — never commit these
+.env
+.env.*
+*.key
+*.pem
+secrets.*
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Heavy files GitHub will reject or choke on (100 MB per file is a hard stop)
+*.rvt
+*.3dm
+*.max
+*.blend
+*.exr
+*.mp4
+*.mov
+*.zip
+
+# Local working copy that the Claude artifact publishes from.
+# index.html is the tracked file — the two are kept identical.
+vibe-coding-workshop.html
