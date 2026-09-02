@@ -183,8 +183,8 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .ax.x0{bottom:-1.5rem; left:0; color:var(--ink-3)} .ax.x1{bottom:-1.5rem; right:0; color:var(--ink-3)}
 
 /* usage meters */
-.usage{display:grid; grid-template-columns:20rem 1fr; gap:2.6rem; border-top:1px solid var(--hair); padding-top:1.1rem}
-.upanel{border:1px solid var(--line); background:var(--panel); padding:.7rem .8rem; display:flex; flex-direction:column; gap:.5rem; align-self:start}
+.usage{display:grid; grid-template-columns:19rem 1fr; gap:2.4rem; border-top:1px solid var(--hair); padding-top:.9rem; min-height:0}
+.upanel{border:1px solid var(--line); background:var(--panel); padding:.6rem .75rem; display:flex; flex-direction:column; gap:.42rem; align-self:start}
 .prow{display:grid; grid-template-columns:1fr auto auto; gap:.3rem .5rem; align-items:center}
 .pk{font-size:.76rem; color:var(--ink)} .pv{font-family:var(--mono); font-size:.63rem; color:var(--ink-3)}
 .pn{grid-row:span 2; width:1.1rem; height:1.1rem; border-radius:50%; background:var(--accent); color:var(--on-accent);
@@ -197,7 +197,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .pfoot{display:flex; align-items:center; gap:.5rem; border-top:1px solid var(--hair); padding-top:.5rem;
   font-family:var(--mono); font-size:.68rem; color:var(--ink-2)}
 .pfoot span{flex:1}
-.unotes{display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem 1.8rem; align-content:center}
+.unotes{display:grid; grid-template-columns:repeat(3,1fr); gap:.75rem 1.7rem; align-content:center; min-height:0}
 .un{display:grid; grid-template-columns:1.1rem 1fr; gap:.55rem; align-items:start}
 .un b{width:1.1rem; height:1.1rem; border-radius:50%; border:1.4px solid var(--accent); color:var(--accent-ink);
   font-family:var(--mono); font-size:.58rem; font-weight:400; display:grid; place-items:center; margin-top:.1rem}
@@ -237,48 +237,37 @@ h2.big{font-size:3.2rem; line-height:1.02}
 /* ═══════════════ 04 PLATFORMS ═══════════════ */
 .plats{display:grid; grid-template-rows:minmax(0,1fr) auto; height:100%; gap:1.2rem}
 .duo{display:grid; grid-template-columns:1fr 1fr; gap:0}
-.pl{padding:0 2.8rem; border-left:1px solid var(--hair); display:flex; flex-direction:column}
+.pl{padding:0 2.6rem; border-left:1px solid var(--hair); display:flex; flex-direction:column; gap:.55rem; min-height:0}
 .pl:first-child{border-left:0; padding-left:0} .pl:last-child{padding-right:0}
-.pl .pic{width:3rem; height:3rem}
+.pl .pic{width:2.6rem; height:2.6rem}
 .pl.b .pic .a{stroke:var(--steel)} .pl.b .pic .w{stroke:var(--steel); fill:var(--steel-wash)}
-.pl h3{font-size:1.9rem; margin-top:1rem; line-height:1.05}
-.pl .role{font-family:var(--mono); font-size:.6rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-top:.45rem}
-.pl dl{margin:1.3rem 0 0; display:grid; grid-template-columns:5.6rem 1fr; gap:.8rem 1.2rem}
-.pl dt{font-family:var(--mono); font-size:.56rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); padding-top:.2rem}
-.pl dd{margin:0; font-size:1rem; color:var(--ink-2); line-height:1.4}
+.pl h3{font-size:1.75rem; line-height:1.05; margin-top:.35rem}
+.pl .like{font-family:var(--disp); font-size:1.22rem; font-weight:700; letter-spacing:-.024em; line-height:1.15}
+.pl .like b{color:var(--accent-ink); font-weight:700}
+.pl.b .like b{color:var(--steel)}
+.pl .says{margin:0; font-size:.95rem; color:var(--ink-2); line-height:1.42}
+.pl .says b{color:var(--ink); font-weight:500}
+.pl dl{margin:.15rem 0 0; display:grid; grid-template-columns:5.4rem 1fr; gap:.55rem 1.1rem}
+.pl dt{font-family:var(--mono); font-size:.55rem; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-3); padding-top:.18rem}
+.pl dd{margin:0; font-size:.94rem; color:var(--ink-2); line-height:1.38}
 .pl dd b{color:var(--ink); font-weight:500}
-.pl dd code{font-family:var(--mono); font-size:.9rem; color:var(--accent-ink)}
+.pl dd code{font-family:var(--mono); font-size:.85rem; color:var(--accent-ink)}
 .pl.b dd code{color:var(--steel)}
+.pl .term{font-family:var(--mono); font-size:.57rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3); margin-top:auto; padding-top:.7rem; border-top:1px dashed var(--hair)}
+.dia{width:100%; max-width:19rem; aspect-ratio:340/118; height:auto; margin:.1rem 0}
+.dia .d1{fill:none; stroke:var(--ink-3); stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round}
+.dia .d2{fill:var(--accent-wash); stroke:var(--accent); stroke-width:1.3; stroke-linejoin:round}
+.dia .dt{fill:var(--ink-3); font-family:var(--mono); font-size:9px; letter-spacing:.1em}
+.pl.b .dia .d2{fill:var(--steel-wash); stroke:var(--steel)}
+.selfnote{font-size:.9rem; color:var(--ink-2); line-height:1.4; padding-top:.7rem; border-top:1px dashed var(--line)}
+.selfnote b{color:var(--accent-ink); font-weight:500}
 .two{border-top:1px solid var(--hair); padding-top:1.1rem; display:grid; grid-template-columns:auto 1fr 1fr; gap:2.4rem; align-items:center}
 .two .tt{font-family:var(--disp); font-size:1.15rem; font-weight:700; letter-spacing:-.02em; max-width:7rem; line-height:1.1; color:var(--accent-ink)}
 .two .d{display:flex; gap:.7rem; align-items:flex-start; font-size:1rem; color:var(--ink-2); line-height:1.4}
 .two .d b{color:var(--ink); font-weight:500}
 .two .d .ico{color:var(--accent); margin-top:.2rem}
 .two .d code{font-family:var(--mono); font-size:.9rem; color:var(--accent-ink)}
-
-/* sheet 04 — metaphor + static/dynamic */
-.compare{display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:start}
-.cmp{padding:0 2.8rem; border-left:1px solid var(--hair); display:flex; flex-direction:column; gap:.6rem}
-.cmp:first-child{border-left:0; padding-left:0} .cmp:last-child{padding-right:0}
-.cmp .like{font-family:var(--disp); font-size:1.3rem; font-weight:700; letter-spacing:-.024em; line-height:1.15}
-.cmp .like b{color:var(--accent-ink); font-weight:700}
-.cmp.b .like b{color:var(--steel)}
-.dia{width:100%; max-width:22rem; height:auto; margin:.15rem 0 .1rem}
-.dia .d1{fill:none; stroke:var(--ink-3); stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round}
-.dia .d2{fill:var(--accent-wash); stroke:var(--accent); stroke-width:1.3; stroke-linejoin:round}
-.dia .d3{fill:none; stroke:var(--accent); stroke-width:1.2; stroke-linecap:round}
-.cmp.b .dia .d2{fill:var(--steel-wash); stroke:var(--steel)}
-.cmp.b .dia .d3{stroke:var(--steel)}
-.cmp p{margin:0; font-size:.94rem; color:var(--ink-2); line-height:1.45}
-.cmp p b{color:var(--ink); font-weight:500}
-.cmp .term{font-family:var(--mono); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-top:.25rem}
-.fitfor{display:flex; flex-wrap:wrap; gap:.35rem .45rem}
-.fitfor span{font-family:var(--mono); font-size:.63rem; letter-spacing:.04em; border:1px solid var(--line);
-  padding:.22rem .45rem; color:var(--ink-2); white-space:nowrap}
-.fitfor span.no{border-color:var(--accent-line); color:var(--accent-ink); opacity:.75}
-.selfnote{grid-column:1/-1; margin-top:1rem; padding-top:.8rem; border-top:1px dashed var(--line);
-  font-size:.92rem; color:var(--ink-2); line-height:1.45}
-.selfnote b{color:var(--accent-ink); font-weight:500}
 
 /* ═══════════════ 05 TIPS ═══════════════ */
 .tipwrap{display:grid; grid-template-rows:minmax(0,1fr) auto; height:100%; gap:1.2rem}
@@ -773,85 +762,38 @@ h2.big{font-size:3.2rem; line-height:1.02}
 
     <div class="main plats">
       <div class="duo">
-        <div class="pl" data-r style="--d:220">
+        <div class="pl" data-r style="--d:200">
           <svg class="pic" viewBox="0 0 48 48" aria-hidden="true"><rect class="w" x="3" y="8" width="42" height="32" rx="4"/><path class="a" d="M20.4 33.5c-4.6 1.4-4.6-2.4-6.4-3m12.8 5.8v-3.7a3.1 3.1 0 0 0-.9-2.4c3-.35 6.2-1.5 6.2-6.6a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.15-3.6s-1.2-.35-3.9 1.45a13 13 0 0 0-7 0c-2.7-1.8-3.9-1.45-3.9-1.45a4.8 4.8 0 0 0-.15 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.1 3.2 6.25 6.2 6.6a3.1 3.1 0 0 0-.9 2.4v3.7"/></svg>
           <h3>GitHub</h3>
-          <p class="role">Your workbench</p>
+          <p class="like">Like a <b>printed board</b> in the lobby.</p>
+          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true"><rect class="d2" x="6" y="34" width="56" height="50" rx="2"/><path class="d1" d="M15 46h38M15 55h30M15 64h38M15 73h22"/><path class="d1" d="M66 59h34M100 59l-6-4M100 59l-6 4"/><path class="d1" d="M104 59h28c14 0 14-40 28-40h24M104 59h80M104 59h28c14 0 14 40 28 40h24"/><path class="d1" d="M188 19l-6-4M188 19l-6 4M188 59l-6-4M188 59l-6 4M188 99l-6-4M188 99l-6 4"/><g class="d2"><rect x="192" y="4" width="44" height="30" rx="2"/><rect x="192" y="44" width="44" height="30" rx="2"/><rect x="192" y="84" width="44" height="30" rx="2"/></g><path class="d1" d="M199 13h30M199 20h22M199 53h30M199 60h22M199 93h30M199 100h22"/><text class="dt" x="248" y="16">same</text><text class="dt" x="248" y="56">same</text><text class="dt" x="248" y="96">same</text></svg>
+          <p class="says">Everyone gets the identical file, printed before anyone visited. That is what <b>static</b> means. Good for project pages, viewers, 360 tours, calculators — a deck like this one.</p>
           <dl>
-            <dt>Best for</dt><dd>Front-end pages. Demos, viewers, calculators.</dd>
-            <dt>Who sees it</dt><dd><b>Everyone.</b> A free Pages site means a public repo — history included.</dd>
+            <dt>Who sees it</dt><dd><b>Everyone.</b> A free Pages site is a public repo — history included.</dd>
             <dt>Address</dt><dd><code>yourname.github.io/project</code></dd>
-            <dt>Limits</dt><dd><b>100 MB per file, hard stop.</b> No database, no logins.</dd>
+            <dt>Can't do</dt><dd>Logins, saving for others to see, live firm data. <b>100 MB per file, hard stop.</b></dd>
           </dl>
+          <p class="term">Front end only — it runs on the visitor's computer</p>
         </div>
 
-        <div class="pl b" data-r style="--d:310">
+        <div class="pl b" data-r style="--d:300">
           <svg class="pic" viewBox="0 0 48 48" aria-hidden="true"><rect class="w" x="4" y="6" width="40" height="12" rx="2.5"/><rect class="w" x="4" y="21" width="40" height="12" rx="2.5"/><rect class="s" x="4" y="36" width="40" height="8" rx="2.5"/><path class="a" d="M10 12h.01M10 27h.01M10 40h.01"/><path class="s" d="M16 12h9M16 27h13M16 40h9"/><circle class="a" cx="37" cy="12" r="2"/><circle class="a" cx="37" cy="27" r="2"/></svg>
           <h3>Azure</h3>
-          <p class="role">The firm's server room</p>
+          <p class="like">Like a <b>staffed room</b> with a keycard.</p>
+          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true"><g class="d1"><circle cx="16" cy="19" r="7"/><circle cx="16" cy="59" r="7"/><circle cx="16" cy="99" r="7"/></g><path class="d1" d="M27 19h30c12 0 12 30 24 30M27 59h54M27 99h30c12 0 12-30 24-30"/><path class="d1" d="M85 49l-6-4M85 49l-6 4M85 59l-6-4M85 59l-6 4M85 69l-6-4M85 69l-6 4"/><rect class="d2" x="90" y="30" width="66" height="24" rx="2"/><rect class="d2" x="90" y="64" width="66" height="24" rx="2"/><path class="d1" d="M100 42h.01M100 76h.01M110 42h32M110 76h32"/><path class="d1" d="M160 42h22c12 0 12-23 24-23h20M160 59h46M160 76h22c12 0 12 23 24 23h20"/><path class="d1" d="M212 19l-6-4M212 19l-6 4M212 59l-6-4M212 59l-6 4M212 99l-6-4M212 99l-6 4"/><g class="d2"><rect x="216" y="4" width="44" height="30" rx="2"/><rect x="216" y="44" width="44" height="30" rx="2"/><rect x="216" y="84" width="44" height="30" rx="2"/></g><path class="d1" d="M223 13h30M223 20h12M223 53h18M223 60h28M223 93h24M223 100h30"/><text class="dt" x="272" y="16">for A</text><text class="dt" x="272" y="56">for B</text><text class="dt" x="272" y="96">for C</text></svg>
+          <p class="says">Each visitor gets a page built on request, after it checks who they are and looks something up. That is <b>dynamic</b>. Good for anything with firm data, a login, or a database.</p>
           <dl>
-            <dt>Best for</dt><dd>Anything with firm data or a login.</dd>
             <dt>Who sees it</dt><dd><b>Only the office.</b> Behind firm accounts, and IT can audit it.</dd>
             <dt>Address</dt><dd><code>project.azurestaticapps.net</code></dd>
-            <dt>Limits</dt><dd><b>Whatever you pay for.</b> Front end and back end both.</dd>
+            <dt>Needs</dt><dd>An IT request, a budget, an approval.</dd>
           </dl>
+          <p class="term">Front end + back end — the room behind the desk</p>
         </div>
       </div>
 
-      <div class="compare" data-r style="--d:360">
-        <div class="cmp">
-          <p class="like">Like a <b>printed board</b> pinned up in the lobby.</p>
-          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true">
-            <rect class="d2" x="6" y="34" width="56" height="50" rx="2"/>
-            <path class="d1" d="M15 46h38M15 55h30M15 64h38M15 73h22"/>
-            <path class="d1" d="M66 59h34M100 59l-6-4M100 59l-6 4"/>
-            <path class="d1" d="M104 59h28c14 0 14-40 28-40h24M104 59h80M104 59h28c14 0 14 40 28 40h24"/>
-            <path class="d1" d="M188 19l-6-4M188 19l-6 4M188 59l-6-4M188 59l-6 4M188 99l-6-4M188 99l-6 4"/>
-            <g class="d2"><rect x="192" y="4" width="44" height="30" rx="2"/><rect x="192" y="44" width="44" height="30" rx="2"/><rect x="192" y="84" width="44" height="30" rx="2"/></g>
-            <path class="d1" d="M199 13h30M199 20h22M199 53h30M199 60h22M199 93h30M199 100h22"/>
-            <text class="dt" x="250" y="16">same</text><text class="dt" x="250" y="56">same</text><text class="dt" x="250" y="96">same</text>
-          </svg>
-          <p><b>Static</b> means the page is finished before anyone visits. The server just hands over the file it was given.</p>
-          <p class="term">Front end only</p>
-          <p>What the visitor sees and clicks, running on <b>their</b> computer. There is no room behind it.</p>
-          <div class="fitfor">
-            <span>Project page</span><span>Portfolio</span><span>Before/after viewer</span>
-            <span>360 tour</span><span>Calculator</span><span>A deck like this</span>
-          </div>
-          <div class="fitfor">
-            <span class="no">Logins</span><span class="no">Saving for others to see</span><span class="no">Live firm data</span>
-          </div>
-        </div>
+      <p class="selfnote" data-r style="--d:400">This deck is a static site. On sheet 06 your board saves to <b>your own browser</b> — which is why the person next to you cannot see it. That gap is exactly what a back end is for.</p>
 
-        <div class="cmp b">
-          <p class="like">Like a <b>staffed room</b> with a keycard and a records desk.</p>
-          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true">
-            <g class="d1"><circle cx="18" cy="19" r="8"/><circle cx="18" cy="59" r="8"/><circle cx="18" cy="99" r="8"/></g>
-            <path class="d1" d="M30 19h34c12 0 12 30 24 30M30 59h58M30 99h34c12 0 12-30 24-30"/>
-            <path class="d1" d="M92 49l-6-4M92 49l-6 4M92 59l-6-4M92 59l-6 4M92 69l-6-4M92 69l-6 4"/>
-            <rect class="d2" x="96" y="28" width="70" height="26" rx="2"/>
-            <rect class="d2" x="96" y="62" width="70" height="26" rx="2"/>
-            <path class="d3" d="M106 41h.01M106 75h.01"/>
-            <path class="d1" d="M114 41h34M114 75h34"/>
-            <path class="d1" d="M170 41h24c12 0 12-22 24-22h20M170 58h48M170 75h24c12 0 12 22 24 22h20"/>
-            <path class="d1" d="M222 19l-6-4M222 19l-6 4M222 58l-6-4M222 58l-6 4M222 97l-6-4M222 97l-6 4"/>
-            <g class="d2"><rect x="226" y="4" width="44" height="30" rx="2"/><rect x="226" y="43" width="44" height="30" rx="2"/><rect x="226" y="82" width="44" height="30" rx="2"/></g>
-            <path class="d1" d="M233 13h30M233 20h12M233 52h18M233 59h28M233 91h24M233 98h30"/>
-            <text class="dt" x="284" y="16">for A</text><text class="dt" x="284" y="55">for B</text><text class="dt" x="284" y="94">for C</text>
-          </svg>
-          <p><b>Dynamic</b> means the page is built when you ask for it — after it checks who you are and looks something up.</p>
-          <p class="term">Front end + back end</p>
-          <p>The back end is the room behind the desk: it holds the data, checks the badge, and <b>writes down what you type.</b></p>
-          <div class="fitfor">
-            <span>Firm sign-in</span><span>Shared, saved state</span><span>Live project data</span>
-            <span>Anything with a database</span>
-          </div>
-        </div>
-
-        <p class="selfnote">This deck is a static site. On sheet 06 your board saves to <b>your own browser</b> — which is why the person next to you cannot see it. That gap is exactly what a back end is for.</p>
-      </div>
-
-      <div class="two" data-r style="--d:520">
+      <div class="two" data-r style="--d:480">
         <p class="tt">Two rules,<br>no exceptions</p>
         <div class="d"><svg class="ico ico--sm"><use href="#i-x"/></svg><div><b>Public is forever.</b> Deleting a file doesn't unpublish it — rotate the key instead.</div></div>
         <div class="d"><svg class="ico ico--sm"><use href="#i-x"/></svg><div><b>No keys, no client data, no project files.</b> Write a <code>.gitignore</code> before the first commit.</div></div>
