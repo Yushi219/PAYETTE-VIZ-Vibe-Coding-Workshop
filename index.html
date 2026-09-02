@@ -293,7 +293,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .res a:focus-visible{outline:1px solid var(--accent); outline-offset:4px}
 
 /* ═══════════════ 06 BOARD ═══════════════ */
-.mwrap{display:grid; grid-template-columns:minmax(0,1fr) 18.5rem; gap:2.6rem; height:100%}
+.mwrap{display:grid; grid-template-columns:minmax(0,1fr) 21rem; gap:2.2rem; height:100%}
 .matrix{position:relative; border-left:1px solid var(--line); border-bottom:1px solid var(--line);
   margin:1.2rem 1rem 2.2rem 2.2rem; touch-action:pan-y}
 .matrix .q{position:absolute; left:0; top:0; width:50%; height:50%; background:var(--accent-wash)}
@@ -317,10 +317,14 @@ h2.big{font-size:3.2rem; line-height:1.02}
   display:none; align-items:center; justify-content:center; padding:0}
 .chip2.sel .del{display:flex}
 .chip2 .del:hover{background:var(--qc); color:var(--bg)}
+.chip2.editing{cursor:text; user-select:text; -webkit-user-select:text; touch-action:auto;
+  box-shadow:0 0 0 3px var(--qw)}
+.chip2.editing .txt{outline:none; min-width:2.5rem; display:inline-block}
 .chip2.fresh{animation:fresh .9s var(--ease)}
 @keyframes fresh{0%{transform:translate(-50%,-50%) scale(.6); opacity:0}60%{transform:translate(-50%,-50%) scale(1.06)}100%{transform:translate(-50%,-50%) scale(1); opacity:1}}
 
-.mside{display:flex; flex-direction:column; justify-content:center; gap:.9rem; padding-bottom:1.6rem; min-height:0}
+.mside{display:flex; flex-direction:column; gap:.85rem; padding-bottom:1.6rem; min-height:0}
+.traywrap{display:flex; flex-direction:column; gap:.45rem; flex:1; min-height:0}
 .mside .blk h4{font-size:1.1rem; line-height:1.1; margin-bottom:.35rem}
 .mside .blk p{margin:0; font-size:.9rem; color:var(--ink-2); line-height:1.45}
 .mside .blk p b{color:var(--ink); font-weight:500}
@@ -340,11 +344,14 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .trayhd{font-family:var(--mono); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase;
   color:var(--ink-3); display:flex; align-items:center; gap:.6rem}
 .trayhd::after{content:""; flex:1; height:1px; background:var(--hair)}
-.tray{display:flex; flex-direction:column; gap:.28rem}
-.ex{display:block; width:100%; text-align:left; font-family:var(--body); font-size:.78rem; font-weight:500;
-  background:var(--panel); border:1px solid var(--line); color:var(--ink); border-radius:0;
-  padding:.3rem .52rem; cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none;
+.tray{display:flex; flex-direction:column; gap:.28rem; flex:1; min-height:0; overflow-y:auto; scrollbar-width:thin}
+.ex{display:block; width:100%; text-align:left; font-family:var(--body); border-radius:0;
+  background:var(--panel); border:1px solid var(--line); color:var(--ink);
+  padding:.34rem .55rem; cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none;
   transition:border-color .2s, opacity .2s, background-color .2s}
+.ex b{display:block; font-size:.78rem; font-weight:600; line-height:1.2}
+.ex i{display:block; font-style:normal; font-size:.67rem; font-weight:400; color:var(--ink-2);
+  line-height:1.3; margin-top:.1rem}
 .ex:hover{border-color:var(--accent-line); background:var(--bg)}
 .ex.placed{opacity:.32; cursor:default; border-style:dashed}
 .ex:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
@@ -773,7 +780,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
           <dl>
             <dt>Who sees it</dt><dd><b>Everyone.</b> A free Pages site is a public repo — history included.</dd>
             <dt>Address</dt><dd><code>yourname.github.io/project</code></dd>
-            <dt>Limits</dt><dd>No logins, no shared saving, no live firm data. A file over <b>50 MB</b> gets a warning; over <b>100 MB</b> GitHub refuses the upload.</dd>
+            <dt>Limits</dt><dd>No logins, no shared saving, no live firm data. A file over <b>50&nbsp;MB</b> gets a warning; over <b>100&nbsp;MB</b> GitHub refuses the upload.</dd>
           </dl>
           <p class="term">Front end only — nothing behind the board</p>
         </div>
@@ -871,7 +878,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
         <p class="eyebrow" data-r>06 — Your board</p>
         <h2 class="big" data-r style="--d:80">Fill the wall.</h2>
       </div>
-      <p class="sub" data-r style="--d:160">Worth an afternoon? <b>Times a week × minutes each × people doing it.</b> That's the whole test.</p>
+      <p class="sub" data-r style="--d:160">Every one of these is a <b>two-hour rough framework</b>, not a finished tool. Worth it? Times a week × minutes each × people doing it.</p>
     </header>
 
     <div class="main mwrap">
@@ -887,7 +894,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
       </div>
 
       <div class="mside">
-        <div>
+        <div class="traywrap">
           <p class="trayhd" data-r style="--d:300">Examples — drag one in</p>
           <div class="tray" id="tray" data-r style="--d:340"></div>
         </div>
@@ -898,7 +905,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
             <input id="ideainput" type="text" maxlength="38" autocomplete="off" placeholder="Auto-crop elevation renders">
             <button type="submit">Add</button>
           </div>
-          <p class="howto"><b>Drag</b> it where it belongs. <b>Click</b> one to reveal its ✕. Saves as you go.</p>
+          <p class="howto"><b>Drag</b> to place. <b>Click</b> for its ✕. <b>Double-click</b> to rename. Saves as you go.</p>
         </form>
 
         <div class="qkey" data-r style="--d:480">
@@ -1012,18 +1019,18 @@ h2.big{font-size:3.2rem; line-height:1.02}
   var tray=document.getElementById('tray');
   var form=document.getElementById('addform');
   var input=document.getElementById('ideainput');
-  var KEY='payette-viz-board-v3';
+  var KEY='payette-viz-board-v4';
 
   /* Examples live in the tray, not on the plot. Drag one in to place it. */
   var EXAMPLES=[
-    'Bulk-rename renders',
-    'Pre-delivery QC checklist',
-    'Web presentation page',
-    'Image library + tags',
-    'Material library',
-    'Grasshopper dashboard',
-    'Auto captions',
-    'Render queue board'
+    {t:'Bulk-rename renders',      d:'Renames a whole folder to the standard, and logs it.'},
+    {t:'Contact sheet builder',    d:'A folder of renders in, one printable sheet out.'},
+    {t:'Online material library',  d:'Every swatch, searchable. One link, not a folder.'},
+    {t:'Sky finder',               d:'Filter HDRIs by time of day, cloud and sun angle.'},
+    {t:'Photoshop-free retouch',   d:'Cut backgrounds and export sizes, in the browser.'},
+    {t:'Re-angle a render',        d:'Same scene, new eye level or hour. Options, not art.'},
+    {t:'Grasshopper control panel',d:'Sliders that write a values file GH reads.'},
+    {t:'MaxScript generator',      d:'Say the repetitive job; paste the script it writes.'}
   ];
 
   var chips=[], selected=null, addCount=0, CORNERS=null, trayEls=[];
@@ -1066,7 +1073,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
   function save(){
     try{
       localStorage.setItem(KEY, JSON.stringify(chips.map(function(c){
-        return {t:c.querySelector('.txt').textContent, x:+c.dataset.rx, y:+c.dataset.ry, s:c.dataset.src};
+        return {t:c.dataset.label, x:+c.dataset.rx, y:+c.dataset.ry, s:c.dataset.src};
       })));
     }catch(err){}
   }
@@ -1130,6 +1137,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
 
     var dragging=false, moved=0, sx=0, sy=0, ox=0, oy=0;
     el.addEventListener('pointerdown',function(ev){
+      if(el.classList.contains('editing')) return;
       if(ev.button!==0 && ev.pointerType==='mouse') return;
       dragging=true; moved=0;
       sx=ev.clientX; sy=ev.clientY;
@@ -1155,6 +1163,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
     el.addEventListener('pointercancel',end);
 
     el.addEventListener('keydown',function(ev){
+      if(el.classList.contains('editing')) return;
       var step=ev.shiftKey?6:2, x=parseFloat(el.dataset.x), y=parseFloat(el.dataset.y), handled=true;
       switch(ev.key){
         case 'ArrowLeft':  place(el,x-step,y); break;
@@ -1168,15 +1177,50 @@ h2.big{font-size:3.2rem; line-height:1.02}
       if(handled){ ev.preventDefault(); ev.stopPropagation(); save(); }
     });
 
+    el.dataset.label=item.t;
+
+    function startEdit(){
+      if(el.classList.contains('editing')) return;
+      el.classList.add('editing');
+      select(el);
+      txt.contentEditable='true'; txt.spellcheck=false;
+      txt.focus();
+      var rng=document.createRange(); rng.selectNodeContents(txt);
+      var sel=window.getSelection(); sel.removeAllRanges(); sel.addRange(rng);
+    }
+    function endEdit(commit){
+      if(!el.classList.contains('editing')) return;
+      el.classList.remove('editing');
+      txt.contentEditable='false';
+      var v=txt.textContent.replace(/\s+/g,' ').trim();
+      if(commit && v){ el.dataset.label=v; }
+      txt.textContent=el.dataset.label;
+      el.setAttribute('aria-label',el.dataset.label+' - drag to move, double-click to rename');
+      del.setAttribute('aria-label','Remove '+el.dataset.label);
+      place(el, +el.dataset.rx, +el.dataset.ry);   /* width changed - re-clamp */
+      save();
+    }
+    el.addEventListener('dblclick',function(ev){ ev.preventDefault(); ev.stopPropagation(); startEdit(); });
+    txt.addEventListener('keydown',function(ev){
+      ev.stopPropagation();
+      if(ev.key==='Enter'){ ev.preventDefault(); endEdit(true); el.focus(); }
+      else if(ev.key==='Escape'){ ev.preventDefault(); endEdit(false); el.focus(); }
+    });
+    txt.addEventListener('blur',function(){ endEdit(true); });
+
     updateEmpty();
     return el;
   }
 
   /* the examples tray - drag an entry onto the plot */
   function buildTray(){
-    EXAMPLES.forEach(function(label, idx){
+    EXAMPLES.forEach(function(item, idx){
+      var label=item.t;
       var b=document.createElement('button');
-      b.type='button'; b.className='ex'; b.textContent=label;
+      b.type='button'; b.className='ex';
+      var nm=document.createElement('b'); nm.textContent=label;
+      var ds=document.createElement('i'); ds.textContent=item.d;
+      b.appendChild(nm); b.appendChild(ds);
       b.setAttribute('aria-label','Place '+label+' on the board');
       trayEls.push(b);
       tray.appendChild(b);
