@@ -15,7 +15,7 @@
   --steel:#5A6068; --steel-wash:rgba(48,52,58,.08);
   --good:#3D7A55; --warn:#8C6417;
   --q-tl:#C0562F; --q-tr:#2C6E9B; --q-bl:#3D7F55; --q-br:#6D5296;
-  --dot:rgba(48,52,58,.30); --blush:#EFDBCB;
+  --dot:rgba(48,52,58,.30);
 
 }
 @media (prefers-color-scheme:dark){
@@ -29,7 +29,7 @@
     --steel:#A8ACB0; --steel-wash:rgba(240,236,226,.07);
     --good:#5FBF8B; --warn:#DCA24D;
     --q-tl:#E5825F; --q-tr:#6FB0DC; --q-bl:#5FBF8A; --q-br:#A98FD6;
-    --dot:rgba(240,236,226,.26); --blush:#2E2622;
+    --dot:rgba(240,236,226,.26);
 
   }
 }
@@ -43,7 +43,7 @@
   --steel:#A8ACB0; --steel-wash:rgba(240,236,226,.07);
   --good:#5FBF8B; --warn:#DCA24D;
   --q-tl:#E5825F; --q-tr:#6FB0DC; --q-bl:#5FBF8A; --q-br:#A98FD6;
-  --dot:rgba(240,236,226,.26); --blush:#2E2622;
+  --dot:rgba(240,236,226,.26);
 
 }
 
@@ -121,7 +121,6 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .pic .w{fill:var(--accent-wash); stroke:var(--accent); stroke-width:1.3; stroke-linejoin:round}
 
 /* ═══════════════ 00 COVER ═══════════════ */
-.cover{background:var(--blush)}
 .scatter{position:absolute; inset:0; width:100%; height:100%; z-index:0; pointer-events:none}
 .scatter .netline{fill:none; stroke:var(--accent); stroke-width:11; stroke-linecap:round}
 .scatter .netdot{fill:var(--accent)}
@@ -136,6 +135,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
   color:var(--ink-2)}
 .cover h1{font-size:5.6rem; line-height:.94; letter-spacing:-.045em; font-variation-settings:"opsz" 96;
   text-transform:uppercase; margin-top:1.5rem; color:var(--ink); max-width:none}
+.cover h1 em{font-style:normal; display:block; color:var(--accent-ink)}
 .cover .sub{font-size:1.16rem; max-width:34ch; margin:1.5rem auto 0; color:var(--ink-2)}
 .cover .meta{position:relative; margin-bottom:4.8rem; display:flex; gap:3.4rem; flex-wrap:wrap; justify-content:center;
   border-top:1px solid var(--accent-line); padding-top:1.1rem}
@@ -493,8 +493,8 @@ h2.big{font-size:3.2rem; line-height:1.02}
   <div class="wrap">
     <div class="covercenter">
       <p class="kicker" data-r style="--d:80">Internal Session · September 2026</p>
-      <h1 data-r style="--d:160">Payette Viz<br>Vibe Coding<br>Workshop</h1>
-      <p class="sub" data-r style="--d:280">Describe it. Claude Code builds it and puts it online.</p>
+      <h1 data-r style="--d:160">Payette Viz<em>Vibe Coding</em>Workshop</h1>
+      <p class="sub" data-r style="--d:280">Bring the thing you keep doing by hand. Leave with it built.</p>
     </div>
 
     <div class="meta" data-r style="--d:380">
