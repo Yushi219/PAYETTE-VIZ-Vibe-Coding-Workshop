@@ -125,6 +125,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .scatter .netline{fill:none; stroke:var(--accent); stroke-width:11; stroke-linecap:round}
 .scatter .netdot{fill:var(--accent)}
 .scatter .ink{fill:none; stroke:var(--ink); stroke-width:6.5; stroke-linecap:round; stroke-linejoin:round}
+.scatter .solid path,.scatter .solid circle{fill:var(--panel)}
 .scatter .inkdot{fill:var(--ink)}
 .scatter .ink path{vector-effect:non-scaling-stroke}
 .scatter .mo{opacity:0; transition:opacity .9s var(--ease) var(--t)}
@@ -447,48 +448,53 @@ h2.big{font-size:3.2rem; line-height:1.02}
     <g class="mo" style="--t:.10s">
       <g class="netline"><path d="M95 175 25 70M95 175 215 120M95 175 20 300M95 175 225 240M95 175 150 25M215 120 225 240"/></g>
       <g class="netdot">
-        <circle cx="95" cy="175" r="28"/><circle cx="25" cy="70" r="21"/><circle cx="215" cy="120" r="19"/>
-        <circle cx="20" cy="300" r="22"/><circle cx="225" cy="240" r="17"/><circle cx="150" cy="25" r="16"/>
+        <circle cx="95" cy="175" r="30"/><circle cx="25" cy="70" r="22"/><circle cx="215" cy="120" r="20"/>
+        <circle cx="20" cy="300" r="23"/><circle cx="225" cy="240" r="18"/><circle cx="150" cy="25" r="17"/>
       </g>
     </g>
 
-    <!-- left hand, off the edge -->
-    <g class="mo ink" style="--t:.34s" transform="translate(-124,226) scale(1.05)"><path d="M105 245 C116 222, 152 211, 182 222 C212 233, 229 258, 229 288 C229 318, 214 344, 190 354 C167 363, 141 353, 129 335"/><path d="M137 252 C165 243, 194 252, 201 271 C206 285, 196 295, 179 294"/><path d="M131 277 C160 268, 191 276, 199 295 C204 309, 194 319, 177 318"/><path d="M134 301 C161 293, 189 301, 196 317 C201 331, 191 341, 175 340"/></g>
+    <!-- left hand, reaching up toward the network -->
+    <g class="mo ink" style="--t:.34s" transform="translate(-6,150) scale(.92)"><path d="M105 245 C116 222, 152 211, 182 222 C212 233, 229 258, 229 288 C229 318, 214 344, 190 354 C167 363, 141 353, 129 335"/><path d="M137 250 C166 240, 196 250, 203 270 C208 285, 197 296, 179 295"/><path d="M130 277 C160 267, 192 276, 200 296 C205 311, 194 322, 176 320"/><path d="M133 303 C162 295, 190 304, 197 320 C202 334, 192 345, 175 343"/><path d="M140 326 C165 320, 187 328, 193 342 C198 354, 189 364, 173 362"/><path d="M105 245 C78 252, 46 268, 14 292"/><path d="M129 335 C106 346, 78 362, 48 380"/></g>
 
     <!-- bottom-left figure, network in the chest -->
-    <g class="mo" style="--t:.52s" transform="translate(30,-90) scale(.9)">
-      <g class="ink">
-        <circle cx="195" cy="690" r="34"/>
-        <path d="M120 906 C124 802, 150 772, 195 772 C240 772, 266 802, 270 906"/>
-        <path d="M162 806 195 790M195 790 228 806M162 806 180 832M228 806 212 832M180 832 212 832M195 790 195 758"/>
-      </g>
+    <g class="mo" style="--t:.52s" transform="translate(30,-40) scale(.92)">
+      <g class="ink solid"><circle cx="195" cy="690" r="36"/></g>
+      <g class="ink"><path d="M118 912 C122 800, 149 768, 195 768 C241 768, 268 800, 272 912"/></g>
+      <g class="ink"><path d="M160 806 195 788M195 788 230 806M160 806 179 834M230 806 211 834M179 834 211 834M195 788 195 754"/></g>
       <g class="inkdot">
-        <circle cx="162" cy="806" r="7"/><circle cx="195" cy="790" r="7"/><circle cx="228" cy="806" r="7"/>
-        <circle cx="180" cy="832" r="6"/><circle cx="212" cy="832" r="6"/>
+        <circle cx="160" cy="806" r="8"/><circle cx="195" cy="788" r="8"/><circle cx="230" cy="806" r="8"/>
+        <circle cx="179" cy="834" r="7"/><circle cx="211" cy="834" r="7"/>
       </g>
+    </g>
+
+    <!-- bottom-centre stepped form -->
+    <g class="mo ink solid" style="--t:.60s" transform="translate(310,700) scale(.86)">
+      <path d="M64 40h56v-34h-56z"/><path d="M36 82h112v-42h-112z"/>
+      <path d="M8 124h168v-42h-168z"/><path d="M-20 172h224v-48h-224z"/>
     </g>
 
     <!-- right-hand network mesh -->
-    <g class="mo" style="--t:.24s" transform="translate(60,-7) scale(.94)">
+    <g class="mo" style="--t:.24s" transform="translate(48,-32) scale(.96)">
       <g class="netline"><path d="M1390 285 1545 330M1390 285 1462 395M1545 330 1462 395M1462 395 1372 490M1462 395 1540 505M1372 490 1455 585M1540 505 1455 585M1372 490 1540 505"/></g>
       <g class="netdot">
-        <circle cx="1390" cy="285" r="22"/><circle cx="1545" cy="330" r="20"/><circle cx="1462" cy="395" r="27"/>
-        <circle cx="1372" cy="490" r="21"/><circle cx="1540" cy="505" r="20"/><circle cx="1455" cy="585" r="17"/>
+        <circle cx="1390" cy="285" r="24"/><circle cx="1545" cy="330" r="21"/><circle cx="1462" cy="395" r="29"/>
+        <circle cx="1372" cy="490" r="22"/><circle cx="1540" cy="505" r="21"/><circle cx="1455" cy="585" r="18"/>
       </g>
     </g>
 
-    <!-- top-right hand, mirrored, reaching down to the mesh -->
-    <g class="mo ink" style="--t:.44s" transform="translate(1657,-163) scale(-1,1)"><path d="M105 245 C116 222, 152 211, 182 222 C212 233, 229 258, 229 288 C229 318, 214 344, 190 354 C167 363, 141 353, 129 335"/><path d="M137 252 C165 243, 194 252, 201 271 C206 285, 196 295, 179 294"/><path d="M131 277 C160 268, 191 276, 199 295 C204 309, 194 319, 177 318"/><path d="M134 301 C161 293, 189 301, 196 317 C201 331, 191 341, 175 340"/></g>
+    <!-- top-right hand, mirrored, coming down to the mesh -->
+    <g class="mo ink" style="--t:.44s" transform="translate(1606,-146) scale(-.9,.9)"><path d="M105 245 C116 222, 152 211, 182 222 C212 233, 229 258, 229 288 C229 318, 214 344, 190 354 C167 363, 141 353, 129 335"/><path d="M137 250 C166 240, 196 250, 203 270 C208 285, 197 296, 179 295"/><path d="M130 277 C160 267, 192 276, 200 296 C205 311, 194 322, 176 320"/><path d="M133 303 C162 295, 190 304, 197 320 C202 334, 192 345, 175 343"/><path d="M140 326 C165 320, 187 328, 193 342 C198 354, 189 364, 173 362"/><path d="M105 245 C78 252, 46 268, 14 292"/><path d="M129 335 C106 346, 78 362, 48 380"/></g>
 
-    <!-- bottom-right framed marks -->
-    <g class="mo" style="--t:.66s" transform="translate(187,-36) scale(.88)">
-      <g class="ink">
-        <path d="M1310 712h76v76h-76z"/><circle cx="1348" cy="750" r="20"/>
-        <path d="M1404 700h80v80h-80z"/>
-        <path d="M1420 740 C1433 723, 1455 723, 1468 740 C1455 757, 1433 757, 1420 740Z"/>
-        <path d="M1310 806h58v58h-58z"/><path d="M1324 850 1354 820"/>
+    <!-- bottom-right framed marks, with a hand pointing into them -->
+    <g class="mo" style="--t:.66s" transform="translate(1276,612) scale(.86)">
+      <g class="ink solid">
+        <path d="M4 8h84v84h-84z"/><path d="M112 0h88v88h-88z"/><path d="M4 112h64v64h-64z"/>
       </g>
-      <g class="inkdot"><circle cx="1348" cy="750" r="7"/><circle cx="1444" cy="740" r="7"/></g>
+      <g class="ink"><circle cx="46" cy="50" r="21"/></g>
+      <g class="ink"><path d="M130 44 C142 27, 170 27, 182 44 C170 61, 142 61, 130 44Z"/></g>
+      <g class="ink"><path d="M18 158 50 126"/></g>
+      <g class="inkdot"><circle cx="46" cy="50" r="8"/><circle cx="156" cy="44" r="8"/></g>
+      <g class="ink solid" transform="translate(178,86) scale(.86)"><path d="M4 74 C6 52, 12 32, 22 20 C29 12, 40 15, 40 27 L40 52 C40 43, 50 41, 53 50 L53 60 C53 52, 63 51, 65 60 L65 68 C65 60, 75 60, 75 69 L75 86 C75 104, 63 118, 44 118 C25 118, 10 104, 6 88 Z"/></g>
     </g>
   </svg>
   <div class="wrap">
