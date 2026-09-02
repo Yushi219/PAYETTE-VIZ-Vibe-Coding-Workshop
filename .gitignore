@@ -28,3 +28,6 @@ desktop.ini
 # Local working copy that the Claude artifact publishes from.
 # index.html is the tracked file — the two are kept identical.
 vibe-coding-workshop.html
+
+# Rendered slide exports — regenerate with: python capture-slides.py
+Slides/

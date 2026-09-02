@@ -137,7 +137,8 @@ h2.big{font-size:3.2rem; line-height:1.02}
   text-transform:uppercase; margin-top:1.5rem; color:var(--ink); max-width:none}
 .cover h1 em{font-style:normal; display:block; color:var(--accent-ink)}
 .cover .sub{font-size:1.16rem; max-width:34ch; margin:1.5rem auto 0; color:var(--ink-2)}
-.cover .meta{position:relative; margin-bottom:4.8rem; display:flex; gap:3.4rem; flex-wrap:wrap; justify-content:center;
+.cover .meta{position:relative; margin:0 auto 4.8rem; width:max-content; max-width:100%;
+  display:flex; gap:3.4rem; flex-wrap:wrap; justify-content:center;
   border-top:1px solid var(--accent-line); padding-top:1.1rem}
 .cover .meta div{font-family:var(--mono); font-size:.76rem; color:var(--ink-2); text-align:center}
 .cover .meta div span{display:block; font-size:.55rem; letter-spacing:.2em; text-transform:uppercase;
@@ -1021,9 +1022,15 @@ h2.big{font-size:3.2rem; line-height:1.02}
     if(to!==null){ e.preventDefault(); goTo(to); }
   });
 
-  var start=parseInt((location.hash||'').replace('#',''),10);
-  if(!isNaN(start)&&slides[start]) deck.scrollTop=start*deck.clientHeight;
-  sync();
+  /* the hash can be read before layout has a height, which silently lands on
+     sheet 0; re-apply it once the page has actually laid out. */
+  function jumpToHash(){
+    var h=parseInt((location.hash||'').replace('#',''),10);
+    if(!isNaN(h) && slides[h] && deck.clientHeight){ deck.scrollTop=h*deck.clientHeight; }
+    sync();
+  }
+  jumpToHash();
+  window.addEventListener('load', jumpToHash);
 })();
 
 /* IDEA BOARD ------------------------------------------------------------ */
