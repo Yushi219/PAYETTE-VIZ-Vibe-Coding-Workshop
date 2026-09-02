@@ -256,6 +256,30 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .two .d .ico{color:var(--accent); margin-top:.2rem}
 .two .d code{font-family:var(--mono); font-size:.9rem; color:var(--accent-ink)}
 
+/* sheet 04 — metaphor + static/dynamic */
+.compare{display:grid; grid-template-columns:1fr 1fr; gap:0; align-items:start}
+.cmp{padding:0 2.8rem; border-left:1px solid var(--hair); display:flex; flex-direction:column; gap:.6rem}
+.cmp:first-child{border-left:0; padding-left:0} .cmp:last-child{padding-right:0}
+.cmp .like{font-family:var(--disp); font-size:1.3rem; font-weight:700; letter-spacing:-.024em; line-height:1.15}
+.cmp .like b{color:var(--accent-ink); font-weight:700}
+.cmp.b .like b{color:var(--steel)}
+.dia{width:100%; max-width:22rem; height:auto; margin:.15rem 0 .1rem}
+.dia .d1{fill:none; stroke:var(--ink-3); stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round}
+.dia .d2{fill:var(--accent-wash); stroke:var(--accent); stroke-width:1.3; stroke-linejoin:round}
+.dia .d3{fill:none; stroke:var(--accent); stroke-width:1.2; stroke-linecap:round}
+.cmp.b .dia .d2{fill:var(--steel-wash); stroke:var(--steel)}
+.cmp.b .dia .d3{stroke:var(--steel)}
+.cmp p{margin:0; font-size:.94rem; color:var(--ink-2); line-height:1.45}
+.cmp p b{color:var(--ink); font-weight:500}
+.cmp .term{font-family:var(--mono); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-3); margin-top:.25rem}
+.fitfor{display:flex; flex-wrap:wrap; gap:.35rem .45rem}
+.fitfor span{font-family:var(--mono); font-size:.63rem; letter-spacing:.04em; border:1px solid var(--line);
+  padding:.22rem .45rem; color:var(--ink-2); white-space:nowrap}
+.fitfor span.no{border-color:var(--accent-line); color:var(--accent-ink); opacity:.75}
+.selfnote{grid-column:1/-1; margin-top:1rem; padding-top:.8rem; border-top:1px dashed var(--line);
+  font-size:.92rem; color:var(--ink-2); line-height:1.45}
+.selfnote b{color:var(--accent-ink); font-weight:500}
+
 /* ═══════════════ 05 TIPS ═══════════════ */
 .tipwrap{display:grid; grid-template-rows:minmax(0,1fr) auto; height:100%; gap:1.2rem}
 .tips{display:grid; grid-template-columns:repeat(3,1fr); grid-template-rows:1fr 1fr; gap:0}
@@ -278,7 +302,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .res a:focus-visible{outline:1px solid var(--accent); outline-offset:4px}
 
 /* ═══════════════ 06 BOARD ═══════════════ */
-.mwrap{display:grid; grid-template-columns:minmax(0,1fr) 17rem; gap:3rem; height:100%}
+.mwrap{display:grid; grid-template-columns:minmax(0,1fr) 18.5rem; gap:2.6rem; height:100%}
 .matrix{position:relative; border-left:1px solid var(--line); border-bottom:1px solid var(--line);
   margin:1.2rem 1rem 2.2rem 2.2rem; touch-action:pan-y}
 .matrix .q{position:absolute; left:0; top:0; width:50%; height:50%; background:var(--accent-wash)}
@@ -305,7 +329,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .chip2.fresh{animation:fresh .9s var(--ease)}
 @keyframes fresh{0%{transform:translate(-50%,-50%) scale(.6); opacity:0}60%{transform:translate(-50%,-50%) scale(1.06)}100%{transform:translate(-50%,-50%) scale(1); opacity:1}}
 
-.mside{display:flex; flex-direction:column; justify-content:center; gap:1.2rem; padding-bottom:1.6rem}
+.mside{display:flex; flex-direction:column; justify-content:center; gap:.9rem; padding-bottom:1.6rem; min-height:0}
 .mside .blk h4{font-size:1.1rem; line-height:1.1; margin-bottom:.35rem}
 .mside .blk p{margin:0; font-size:.9rem; color:var(--ink-2); line-height:1.45}
 .mside .blk p b{color:var(--ink); font-weight:500}
@@ -322,9 +346,23 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .addform button:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
 .howto{font-size:.77rem; color:var(--ink-3); line-height:1.5; margin:0}
 .howto b{color:var(--ink-2); font-weight:500}
-.reset{background:none; border:0; padding:0; font-family:var(--mono); font-size:.62rem; letter-spacing:.12em;
-  text-transform:uppercase; color:var(--ink-3); cursor:pointer; text-align:left}
-.reset:hover{color:var(--accent-ink)}
+.trayhd{font-family:var(--mono); font-size:.58rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--ink-3); display:flex; align-items:center; gap:.6rem}
+.trayhd::after{content:""; flex:1; height:1px; background:var(--hair)}
+.tray{display:flex; flex-direction:column; gap:.28rem}
+.ex{display:block; width:100%; text-align:left; font-family:var(--body); font-size:.78rem; font-weight:500;
+  background:var(--panel); border:1px solid var(--line); color:var(--ink); border-radius:0;
+  padding:.3rem .52rem; cursor:grab; touch-action:none; user-select:none; -webkit-user-select:none;
+  transition:border-color .2s, opacity .2s, background-color .2s}
+.ex:hover{border-color:var(--accent-line); background:var(--bg)}
+.ex.placed{opacity:.32; cursor:default; border-style:dashed}
+.ex:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.chip2.ghost{position:fixed; left:0; top:0; z-index:60; pointer-events:none; opacity:.92;
+  box-shadow:0 8px 22px -10px rgba(0,0,0,.5)}
+.emptyhint{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%);
+  font-family:var(--mono); font-size:.68rem; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--ink-3); text-align:center; pointer-events:none; transition:opacity .4s}
+.matrix.has-chips .emptyhint{opacity:0}
 .qkey{border-top:1px solid var(--hair); padding-top:.9rem; display:grid; grid-template-columns:1fr 1fr; gap:.5rem .9rem}
 .qkey div{display:flex; align-items:center; gap:.5rem; font-size:.75rem; color:var(--ink-2); line-height:1.2}
 .qkey i{width:.9rem; height:.9rem; flex:0 0 auto}
@@ -760,7 +798,60 @@ h2.big{font-size:3.2rem; line-height:1.02}
         </div>
       </div>
 
-      <div class="two" data-r style="--d:420">
+      <div class="compare" data-r style="--d:360">
+        <div class="cmp">
+          <p class="like">Like a <b>printed board</b> pinned up in the lobby.</p>
+          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true">
+            <rect class="d2" x="6" y="34" width="56" height="50" rx="2"/>
+            <path class="d1" d="M15 46h38M15 55h30M15 64h38M15 73h22"/>
+            <path class="d1" d="M66 59h34M100 59l-6-4M100 59l-6 4"/>
+            <path class="d1" d="M104 59h28c14 0 14-40 28-40h24M104 59h80M104 59h28c14 0 14 40 28 40h24"/>
+            <path class="d1" d="M188 19l-6-4M188 19l-6 4M188 59l-6-4M188 59l-6 4M188 99l-6-4M188 99l-6 4"/>
+            <g class="d2"><rect x="192" y="4" width="44" height="30" rx="2"/><rect x="192" y="44" width="44" height="30" rx="2"/><rect x="192" y="84" width="44" height="30" rx="2"/></g>
+            <path class="d1" d="M199 13h30M199 20h22M199 53h30M199 60h22M199 93h30M199 100h22"/>
+            <text class="dt" x="250" y="16">same</text><text class="dt" x="250" y="56">same</text><text class="dt" x="250" y="96">same</text>
+          </svg>
+          <p><b>Static</b> means the page is finished before anyone visits. The server just hands over the file it was given.</p>
+          <p class="term">Front end only</p>
+          <p>What the visitor sees and clicks, running on <b>their</b> computer. There is no room behind it.</p>
+          <div class="fitfor">
+            <span>Project page</span><span>Portfolio</span><span>Before/after viewer</span>
+            <span>360 tour</span><span>Calculator</span><span>A deck like this</span>
+          </div>
+          <div class="fitfor">
+            <span class="no">Logins</span><span class="no">Saving for others to see</span><span class="no">Live firm data</span>
+          </div>
+        </div>
+
+        <div class="cmp b">
+          <p class="like">Like a <b>staffed room</b> with a keycard and a records desk.</p>
+          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true">
+            <g class="d1"><circle cx="18" cy="19" r="8"/><circle cx="18" cy="59" r="8"/><circle cx="18" cy="99" r="8"/></g>
+            <path class="d1" d="M30 19h34c12 0 12 30 24 30M30 59h58M30 99h34c12 0 12-30 24-30"/>
+            <path class="d1" d="M92 49l-6-4M92 49l-6 4M92 59l-6-4M92 59l-6 4M92 69l-6-4M92 69l-6 4"/>
+            <rect class="d2" x="96" y="28" width="70" height="26" rx="2"/>
+            <rect class="d2" x="96" y="62" width="70" height="26" rx="2"/>
+            <path class="d3" d="M106 41h.01M106 75h.01"/>
+            <path class="d1" d="M114 41h34M114 75h34"/>
+            <path class="d1" d="M170 41h24c12 0 12-22 24-22h20M170 58h48M170 75h24c12 0 12 22 24 22h20"/>
+            <path class="d1" d="M222 19l-6-4M222 19l-6 4M222 58l-6-4M222 58l-6 4M222 97l-6-4M222 97l-6 4"/>
+            <g class="d2"><rect x="226" y="4" width="44" height="30" rx="2"/><rect x="226" y="43" width="44" height="30" rx="2"/><rect x="226" y="82" width="44" height="30" rx="2"/></g>
+            <path class="d1" d="M233 13h30M233 20h12M233 52h18M233 59h28M233 91h24M233 98h30"/>
+            <text class="dt" x="284" y="16">for A</text><text class="dt" x="284" y="55">for B</text><text class="dt" x="284" y="94">for C</text>
+          </svg>
+          <p><b>Dynamic</b> means the page is built when you ask for it — after it checks who you are and looks something up.</p>
+          <p class="term">Front end + back end</p>
+          <p>The back end is the room behind the desk: it holds the data, checks the badge, and <b>writes down what you type.</b></p>
+          <div class="fitfor">
+            <span>Firm sign-in</span><span>Shared, saved state</span><span>Live project data</span>
+            <span>Anything with a database</span>
+          </div>
+        </div>
+
+        <p class="selfnote">This deck is a static site. On sheet 06 your board saves to <b>your own browser</b> — which is why the person next to you cannot see it. That gap is exactly what a back end is for.</p>
+      </div>
+
+      <div class="two" data-r style="--d:520">
         <p class="tt">Two rules,<br>no exceptions</p>
         <div class="d"><svg class="ico ico--sm"><use href="#i-x"/></svg><div><b>Public is forever.</b> Deleting a file doesn't unpublish it — rotate the key instead.</div></div>
         <div class="d"><svg class="ico ico--sm"><use href="#i-x"/></svg><div><b>No keys, no client data, no project files.</b> Write a <code>.gitignore</code> before the first commit.</div></div>
@@ -834,9 +925,9 @@ h2.big{font-size:3.2rem; line-height:1.02}
     <header class="top">
       <div>
         <p class="eyebrow" data-r>06 — Your board</p>
-        <h2 class="big" data-r style="--d:80">Put your idea on the wall.</h2>
+        <h2 class="big" data-r style="--d:80">Fill the wall.</h2>
       </div>
-      <p class="sub" data-r style="--d:160">Drag anything. Add your own on the right. The colour shifts as it moves.</p>
+      <p class="sub" data-r style="--d:160">Worth an afternoon? <b>Times a week × minutes each × people doing it.</b> That's the whole test.</p>
     </header>
 
     <div class="main mwrap">
@@ -848,22 +939,22 @@ h2.big{font-size:3.2rem; line-height:1.02}
         <span class="qt" style="right:.7rem;bottom:.6rem">Later</span>
         <span class="ax y">Value to the team →</span>
         <span class="ax x0">Easy</span><span class="ax x">Effort</span><span class="ax x1">Hard</span>
+        <p class="emptyhint">Drag an example in →<br>or add your own</p>
       </div>
 
       <div class="mside">
-        <div class="blk" data-r style="--d:320">
-          <h4>Worth an afternoon?</h4>
-          <p>Times a week <b>×</b> minutes each <b>×</b> people doing it. That's the whole test.</p>
+        <div>
+          <p class="trayhd" data-r style="--d:300">Examples — drag one in</p>
+          <div class="tray" id="tray" data-r style="--d:340"></div>
         </div>
 
-        <form class="addform" id="addform" data-r style="--d:400">
-          <label for="ideainput">Add your idea</label>
+        <form class="addform" id="addform" data-r style="--d:420">
+          <label for="ideainput">Add your own</label>
           <div class="fieldrow">
             <input id="ideainput" type="text" maxlength="38" autocomplete="off" placeholder="Auto-crop elevation renders">
             <button type="submit">Add</button>
           </div>
-          <p class="howto">It lands in the middle. <b>Drag</b> it where it belongs. <b>Click</b> one to reveal its ✕.</p>
-          <button type="button" class="reset" id="resetbtn">Reset the board</button>
+          <p class="howto"><b>Drag</b> it where it belongs. <b>Click</b> one to reveal its ✕. Saves as you go.</p>
         </form>
 
         <div class="qkey" data-r style="--d:480">
@@ -871,7 +962,6 @@ h2.big{font-size:3.2rem; line-height:1.02}
           <div><i style="background:var(--q-tr)"></i>Worth it</div>
           <div><i style="background:var(--q-bl)"></i>While you're there</div>
           <div><i style="background:var(--q-br)"></i>Later</div>
-          <p>Sitting between two corners? The colour blends the two.</p>
         </div>
       </div>
     </div>
@@ -972,117 +1062,110 @@ h2.big{font-size:3.2rem; line-height:1.02}
   sync();
 })();
 
-/* ─────────── IDEA BOARD ─────────── */
+/* IDEA BOARD ------------------------------------------------------------ */
 (function(){
   var matrix=document.getElementById('matrix');
+  var tray=document.getElementById('tray');
   var form=document.getElementById('addform');
   var input=document.getElementById('ideainput');
-  var resetBtn=document.getElementById('resetbtn');
-  var KEY='payette-viz-board-v2';
+  var KEY='payette-viz-board-v3';
 
-  var SEED=[
-    {t:'Bulk-rename renders',        x:16, y:26},
-    {t:'Before / after slider',      x:41, y:12},
-    {t:'Web presentation page',      x:69, y:21},
-    {t:'Metrics calculator',         x:15, y:45},
-    {t:'Material library',           x:21, y:66},
-    {t:'Pre-delivery QC checklist',  x:46, y:37},
-    {t:'360 / VR viewer',            x:70, y:45},
-    {t:'Image library + tags',       x:88, y:13},
-    {t:'Photoshop / AE batch',       x:44, y:62},
-    {t:'Grasshopper dashboard',      x:73, y:68},
-    {t:'Auto captions',              x:91, y:36},
-    {t:'Render queue board',         x:88, y:85}
+  /* Examples live in the tray, not on the plot. Drag one in to place it. */
+  var EXAMPLES=[
+    'Bulk-rename renders',
+    'Pre-delivery QC checklist',
+    'Web presentation page',
+    'Image library + tags',
+    'Material library',
+    'Grasshopper dashboard',
+    'Auto captions',
+    'Render queue board'
   ];
 
-  var chips=[], selected=null, addCount=0, CORNERS=null;
+  var chips=[], selected=null, addCount=0, CORNERS=null, trayEls=[];
 
-  /* read the four corner colours from the live theme */
   function hexToRgb(v){
     v=(v||'').trim();
     var m=v.match(/^#([0-9a-f]{6})$/i);
     if(m){ var n=parseInt(m[1],16); return [n>>16&255, n>>8&255, n&255]; }
     m=v.match(/rgba?\(([^)]+)\)/);
-    if(m){ var p=m[1].split(',').map(parseFloat); return [p[0],p[1],p[2]]; }
+    if(m){ var q=m[1].split(',').map(parseFloat); return [q[0],q[1],q[2]]; }
     return [128,128,128];
   }
   function readCorners(){
     var cs=getComputedStyle(document.documentElement);
-    CORNERS={
-      tl:hexToRgb(cs.getPropertyValue('--q-tl')),
-      tr:hexToRgb(cs.getPropertyValue('--q-tr')),
-      bl:hexToRgb(cs.getPropertyValue('--q-bl')),
-      br:hexToRgb(cs.getPropertyValue('--q-br'))
-    };
+    CORNERS={ tl:hexToRgb(cs.getPropertyValue('--q-tl')), tr:hexToRgb(cs.getPropertyValue('--q-tr')),
+              bl:hexToRgb(cs.getPropertyValue('--q-bl')), br:hexToRgb(cs.getPropertyValue('--q-br')) };
   }
-  /* bilinear blend of the four corners at (x,y) in 0..100 */
   function blend(x,y){
     if(!CORNERS) readCorners();
     var u=Math.max(0,Math.min(1,x/100)), v=Math.max(0,Math.min(1,y/100));
     var w=[(1-u)*(1-v), u*(1-v), (1-u)*v, u*v], tot=0, k;
-    /* Plain bilinear spreads too evenly and everything turns to mauve. Sharpen the
-       weights so a chip sitting inside a region keeps that region's hue. */
     for(k=0;k<4;k++){ w[k]=w[k]*w[k]*w[k]; tot+=w[k]; }
-    for(k=0;k<4;k++){ w[k]/= (tot||1); }
+    for(k=0;k<4;k++){ w[k]/=(tot||1); }
     var mix=[0,0,0];
     for(var i=0;i<3;i++){
       mix[i]= CORNERS.tl[i]*w[0] + CORNERS.tr[i]*w[1] + CORNERS.bl[i]*w[2] + CORNERS.br[i]*w[3];
     }
-    /* Averaging saturated hues in RGB runs through grey. Push the chroma back out —
-       but only where hues are genuinely mixed, so the corners still match the legend. */
     var pure=Math.max(w[0],w[1],w[2],w[3]);
     var K=1+0.8*(1-pure), g=0.299*mix[0]+0.587*mix[1]+0.114*mix[2], out=[0,0,0];
-    for(var j=0;j<3;j++){
-      out[j]=Math.round(Math.max(0,Math.min(255, g+(mix[j]-g)*K )));
-    }
+    for(var j=0;j<3;j++){ out[j]=Math.round(Math.max(0,Math.min(255, g+(mix[j]-g)*K ))); }
     return out;
   }
+  function paint(el,x,y){
+    var c=blend(x,y);
+    el.style.setProperty('--qc','rgb('+c[0]+','+c[1]+','+c[2]+')');
+    el.style.setProperty('--qw','rgba('+c[0]+','+c[1]+','+c[2]+',.10)');
+  }
 
+  /* saves on every change - there is no reset button */
   function save(){
     try{
       localStorage.setItem(KEY, JSON.stringify(chips.map(function(c){
-        return {t:c.querySelector('.txt').textContent, x:parseFloat(c.dataset.x), y:parseFloat(c.dataset.y)};
+        return {t:c.querySelector('.txt').textContent, x:+c.dataset.rx, y:+c.dataset.ry, s:c.dataset.src};
       })));
     }catch(err){}
   }
 
   function place(el,x,y){
-    el.dataset.rx=x; el.dataset.ry=y;          /* what was asked for */
-    /* Clamp by the chip's own box, not its centre, so labels never hang past the axes.
-       Only trust the measurement once the plot actually has a sensible size. */
+    el.dataset.rx=x; el.dataset.ry=y;
     var mr=matrix.getBoundingClientRect(), er=el.getBoundingClientRect();
     var hx=7, hy=4;
     if(mr.width  > 200 && er.width  > 0) hx=Math.min(18,(er.width /2)/mr.width *100);
     if(mr.height > 120 && er.height > 0) hy=Math.min(12,(er.height/2)/mr.height*100);
     var cx=Math.max(hx+0.6, Math.min(100-hx-0.6, x));
     var cy=Math.max(hy+0.6, Math.min(100-hy-0.6, y));
-    el.dataset.x=cx; el.dataset.y=cy;          /* where it actually sits */
+    el.dataset.x=cx; el.dataset.y=cy;
     el.style.left=cx+'%'; el.style.top=cy+'%';
-    var c=blend(cx,cy);
-    el.style.setProperty('--qc','rgb('+c[0]+','+c[1]+','+c[2]+')');
-    el.style.setProperty('--qw','rgba('+c[0]+','+c[1]+','+c[2]+',.10)');
+    paint(el,cx,cy);
   }
   function reflow(){ chips.forEach(function(c){ place(c, +c.dataset.rx, +c.dataset.ry); }); }
   function repaint(){ readCorners(); reflow(); }
 
+  function markTray(idx, on){
+    var t=trayEls[idx];
+    if(t) t.classList.toggle('placed', !!on);
+  }
+  function updateEmpty(){ matrix.classList.toggle('has-chips', chips.length>0); }
+
   function select(el){
     if(selected && selected!==el) selected.classList.remove('sel');
-    selected=el;
-    if(el) el.classList.add('sel');
+    selected=el; if(el) el.classList.add('sel');
   }
   function remove(el){
     var i=chips.indexOf(el);
     if(i>-1) chips.splice(i,1);
     if(selected===el) selected=null;
-    el.remove(); save();
+    if(el.dataset.src!=='') markTray(+el.dataset.src, false);
+    el.remove(); updateEmpty(); save();
   }
 
   function makeChip(item, fresh){
     var el=document.createElement('div');
     el.className='chip2'+(fresh?' fresh':'');
-    el.tabIndex=0;
-    el.setAttribute('role','button');
-    el.setAttribute('aria-label',item.t+' — drag to move, press Delete to remove');
+    el.tabIndex=0; el.setAttribute('role','button');
+    el.dataset.src = (item.s===undefined || item.s===null) ? '' : String(item.s);
+    el.setAttribute('aria-label',item.t+' - drag to move, press Delete to remove');
 
     var txt=document.createElement('span');
     txt.className='txt'; txt.textContent=item.t;
@@ -1091,7 +1174,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
     var del=document.createElement('button');
     del.className='del'; del.type='button';
     del.setAttribute('aria-label','Remove '+item.t);
-    del.textContent='×';
+    del.textContent='\u00d7';
     del.addEventListener('pointerdown',function(ev){ ev.stopPropagation(); });
     del.addEventListener('click',function(ev){ ev.stopPropagation(); remove(el); });
     el.appendChild(del);
@@ -1099,6 +1182,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
     matrix.appendChild(el);
     chips.push(el);
     place(el,item.x,item.y);
+    if(el.dataset.src!=='') markTray(+el.dataset.src, true);
 
     var dragging=false, moved=0, sx=0, sy=0, ox=0, oy=0;
     el.addEventListener('pointerdown',function(ev){
@@ -1108,8 +1192,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
       ox=parseFloat(el.dataset.x); oy=parseFloat(el.dataset.y);
       el.classList.add('drag'); el.classList.remove('fresh');
       try{ el.setPointerCapture(ev.pointerId); }catch(err){}
-      ev.preventDefault();
-      el.focus();
+      ev.preventDefault(); el.focus();
     });
     el.addEventListener('pointermove',function(ev){
       if(!dragging) return;
@@ -1120,8 +1203,7 @@ h2.big{font-size:3.2rem; line-height:1.02}
     });
     function end(ev){
       if(!dragging) return;
-      dragging=false;
-      el.classList.remove('drag');
+      dragging=false; el.classList.remove('drag');
       try{ el.releasePointerCapture(ev.pointerId); }catch(err){}
       if(moved<5){ select(selected===el?null:el); } else { save(); }
     }
@@ -1142,13 +1224,70 @@ h2.big{font-size:3.2rem; line-height:1.02}
       if(handled){ ev.preventDefault(); ev.stopPropagation(); save(); }
     });
 
+    updateEmpty();
     return el;
   }
 
-  function build(list){
-    chips.slice().forEach(function(c){ c.remove(); });
-    chips=[]; selected=null;
-    list.forEach(function(item){ makeChip(item,false); });
+  /* the examples tray - drag an entry onto the plot */
+  function buildTray(){
+    EXAMPLES.forEach(function(label, idx){
+      var b=document.createElement('button');
+      b.type='button'; b.className='ex'; b.textContent=label;
+      b.setAttribute('aria-label','Place '+label+' on the board');
+      trayEls.push(b);
+      tray.appendChild(b);
+
+      var ghost=null, sxT=0, syT=0;
+
+      function dropAt(cx,cy){
+        var r=matrix.getBoundingClientRect();
+        var inside = cx>=r.left && cx<=r.right && cy>=r.top && cy<=r.bottom;
+        var x = inside ? (cx-r.left)/r.width*100  : 50;
+        var y = inside ? (cy-r.top)/r.height*100 : 50;
+        var el=makeChip({t:label, x:x, y:y, s:idx}, true);
+        select(el); save();
+      }
+      function moveGhost(cx,cy){
+        ghost.style.transform='translate('+cx+'px,'+cy+'px) translate(-50%,-50%)';
+        var r=matrix.getBoundingClientRect();
+        if(cx>=r.left && cx<=r.right && cy>=r.top && cy<=r.bottom){
+          paint(ghost,(cx-r.left)/r.width*100,(cy-r.top)/r.height*100);
+        }
+      }
+
+      b.addEventListener('pointerdown',function(ev){
+        if(b.classList.contains('placed')) return;
+        if(ev.button!==0 && ev.pointerType==='mouse') return;
+        sxT=ev.clientX; syT=ev.clientY;
+        ghost=document.createElement('div');
+        ghost.className='chip2 ghost';
+        ghost.textContent=label;
+        paint(ghost,50,50);
+        document.body.appendChild(ghost);
+        moveGhost(ev.clientX, ev.clientY);
+        try{ b.setPointerCapture(ev.pointerId); }catch(err){}
+        ev.preventDefault();
+      });
+      b.addEventListener('pointermove',function(ev){
+        if(!ghost) return;
+        moveGhost(ev.clientX, ev.clientY);
+      });
+      b.addEventListener('pointerup',function(ev){
+        if(!ghost) return;
+        ghost.remove(); ghost=null;
+        try{ b.releasePointerCapture(ev.pointerId); }catch(err){}
+        dropAt(ev.clientX, ev.clientY);
+      });
+      b.addEventListener('pointercancel',function(){
+        if(ghost){ ghost.remove(); ghost=null; }
+      });
+      b.addEventListener('keydown',function(ev){
+        if(ev.key==='Enter' || ev.key===' '){
+          ev.preventDefault();
+          if(!b.classList.contains('placed')) dropAt(-1,-1);
+        }
+      });
+    });
   }
 
   matrix.addEventListener('pointerdown',function(ev){
@@ -1160,14 +1299,9 @@ h2.big{font-size:3.2rem; line-height:1.02}
     var v=input.value.trim();
     if(!v) return;
     addCount++;
-    var el=makeChip({t:v, x:44+((addCount%3)-1)*9, y:50+((addCount%2)?-6:6)}, true);
+    var el=makeChip({t:v, x:44+((addCount%3)-1)*9, y:50+((addCount%2)?-6:6), s:''}, true);
     select(el); save();
     input.value=''; input.focus();
-  });
-
-  resetBtn.addEventListener('click',function(){
-    build(SEED);
-    try{ localStorage.removeItem(KEY); }catch(err){}
   });
 
   window.addEventListener('resize', reflow);
@@ -1179,14 +1313,15 @@ h2.big{font-size:3.2rem; line-height:1.02}
     var mq=window.matchMedia('(prefers-color-scheme: dark)');
     if(mq.addEventListener) mq.addEventListener('change', repaint);
   }
-  /* the viewer's explicit light/dark toggle stamps data-theme and never fires matchMedia */
   if(window.MutationObserver){
     new MutationObserver(repaint).observe(document.documentElement,{attributes:true, attributeFilter:['data-theme']});
   }
 
+  readCorners();
+  buildTray();
   var stored=null;
   try{ stored=JSON.parse(localStorage.getItem(KEY)||'null'); }catch(err){}
-  readCorners();
-  build(Array.isArray(stored) && stored.length ? stored : SEED);
+  if(Array.isArray(stored)) stored.forEach(function(item){ makeChip(item,false); });
+  updateEmpty();
 })();
 </script>
