@@ -255,11 +255,13 @@ h2.big{font-size:3.2rem; line-height:1.02}
 .pl.b dd code{color:var(--steel)}
 .pl .term{font-family:var(--mono); font-size:.57rem; letter-spacing:.16em; text-transform:uppercase;
   color:var(--ink-3); margin-top:auto; padding-top:.7rem; border-top:1px dashed var(--hair)}
-.dia{width:100%; max-width:19rem; aspect-ratio:340/118; height:auto; margin:.1rem 0}
+.dia{width:100%; max-width:20rem; aspect-ratio:360/130; height:auto; margin:.1rem 0}
 .dia .d1{fill:none; stroke:var(--ink-3); stroke-width:1.2; stroke-linecap:round; stroke-linejoin:round}
 .dia .d2{fill:var(--accent-wash); stroke:var(--accent); stroke-width:1.3; stroke-linejoin:round}
-.dia .dt{fill:var(--ink-3); font-family:var(--mono); font-size:9px; letter-spacing:.1em}
+.dia .d3{fill:none; stroke:var(--accent); stroke-width:1.3; stroke-linecap:round}
+.dia .dt{fill:var(--ink-3); font-family:var(--mono); font-size:10px; letter-spacing:.12em}
 .pl.b .dia .d2{fill:var(--steel-wash); stroke:var(--steel)}
+.pl.b .dia .d3{stroke:var(--steel)}
 .selfnote{font-size:.9rem; color:var(--ink-2); line-height:1.4; padding-top:.7rem; border-top:1px dashed var(--line)}
 .selfnote b{color:var(--accent-ink); font-weight:500}
 .two{border-top:1px solid var(--hair); padding-top:1.1rem; display:grid; grid-template-columns:auto 1fr 1fr; gap:2.4rem; align-items:center}
@@ -766,28 +768,28 @@ h2.big{font-size:3.2rem; line-height:1.02}
           <svg class="pic" viewBox="0 0 48 48" aria-hidden="true"><rect class="w" x="3" y="8" width="42" height="32" rx="4"/><path class="a" d="M20.4 33.5c-4.6 1.4-4.6-2.4-6.4-3m12.8 5.8v-3.7a3.1 3.1 0 0 0-.9-2.4c3-.35 6.2-1.5 6.2-6.6a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.15-3.6s-1.2-.35-3.9 1.45a13 13 0 0 0-7 0c-2.7-1.8-3.9-1.45-3.9-1.45a4.8 4.8 0 0 0-.15 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.1 3.2 6.25 6.2 6.6a3.1 3.1 0 0 0-.9 2.4v3.7"/></svg>
           <h3>GitHub</h3>
           <p class="like">Like a <b>printed board</b> in the lobby.</p>
-          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true"><rect class="d2" x="6" y="34" width="56" height="50" rx="2"/><path class="d1" d="M15 46h38M15 55h30M15 64h38M15 73h22"/><path class="d1" d="M66 59h34M100 59l-6-4M100 59l-6 4"/><path class="d1" d="M104 59h28c14 0 14-40 28-40h24M104 59h80M104 59h28c14 0 14 40 28 40h24"/><path class="d1" d="M188 19l-6-4M188 19l-6 4M188 59l-6-4M188 59l-6 4M188 99l-6-4M188 99l-6 4"/><g class="d2"><rect x="192" y="4" width="44" height="30" rx="2"/><rect x="192" y="44" width="44" height="30" rx="2"/><rect x="192" y="84" width="44" height="30" rx="2"/></g><path class="d1" d="M199 13h30M199 20h22M199 53h30M199 60h22M199 93h30M199 100h22"/><text class="dt" x="248" y="16">same</text><text class="dt" x="248" y="56">same</text><text class="dt" x="248" y="96">same</text></svg>
-          <p class="says">Everyone gets the identical file, printed before anyone visited. That is what <b>static</b> means. Good for project pages, viewers, 360 tours, calculators — a deck like this one.</p>
+          <svg class="dia" viewBox="0 0 360 130" fill="none" aria-hidden="true"><path class="d1" d="M56 3h168" opacity=".45"/><rect class="d2" x="70" y="9" width="140" height="60" rx="2"/><path class="d1" d="M84 27h112M84 39h74M84 51h112"/><circle class="d3" cx="78" cy="17" r="2.6"/><circle class="d3" cx="202" cy="17" r="2.6"/><circle class="d3" cx="78" cy="61" r="2.6"/><circle class="d3" cx="202" cy="61" r="2.6"/><path class="d1" style="stroke-dasharray:3 4" d="M106 85 130 72M140 85 140 72M174 85 150 72"/><g class="d1"><circle cx="106" cy="95" r="9"/><path d="M93 127a13 13 0 0 1 26 0"/><circle cx="140" cy="95" r="9"/><path d="M127 127a13 13 0 0 1 26 0"/><circle cx="174" cy="95" r="9"/><path d="M161 127a13 13 0 0 1 26 0"/></g><text class="dt" x="238" y="52">ONE BOARD.</text><text class="dt" x="238" y="68">SAME FOR ALL.</text></svg>
+          <p class="says">It goes up finished, and it reads the same to everyone who walks past. Nobody is there to answer a question — that is <b>static</b>. Good for project pages, viewers, 360 tours, calculators, a deck like this one.</p>
           <dl>
             <dt>Who sees it</dt><dd><b>Everyone.</b> A free Pages site is a public repo — history included.</dd>
             <dt>Address</dt><dd><code>yourname.github.io/project</code></dd>
-            <dt>Can't do</dt><dd>Logins, saving for others to see, live firm data. <b>100 MB per file, hard stop.</b></dd>
+            <dt>Limits</dt><dd>No logins, no shared saving, no live firm data. A file over <b>50 MB</b> gets a warning; over <b>100 MB</b> GitHub refuses the upload.</dd>
           </dl>
-          <p class="term">Front end only — it runs on the visitor's computer</p>
+          <p class="term">Front end only — nothing behind the board</p>
         </div>
 
         <div class="pl b" data-r style="--d:300">
           <svg class="pic" viewBox="0 0 48 48" aria-hidden="true"><rect class="w" x="4" y="6" width="40" height="12" rx="2.5"/><rect class="w" x="4" y="21" width="40" height="12" rx="2.5"/><rect class="s" x="4" y="36" width="40" height="8" rx="2.5"/><path class="a" d="M10 12h.01M10 27h.01M10 40h.01"/><path class="s" d="M16 12h9M16 27h13M16 40h9"/><circle class="a" cx="37" cy="12" r="2"/><circle class="a" cx="37" cy="27" r="2"/></svg>
           <h3>Azure</h3>
-          <p class="like">Like a <b>staffed room</b> with a keycard.</p>
-          <svg class="dia" viewBox="0 0 340 118" fill="none" aria-hidden="true"><g class="d1"><circle cx="16" cy="19" r="7"/><circle cx="16" cy="59" r="7"/><circle cx="16" cy="99" r="7"/></g><path class="d1" d="M27 19h30c12 0 12 30 24 30M27 59h54M27 99h30c12 0 12-30 24-30"/><path class="d1" d="M85 49l-6-4M85 49l-6 4M85 59l-6-4M85 59l-6 4M85 69l-6-4M85 69l-6 4"/><rect class="d2" x="90" y="30" width="66" height="24" rx="2"/><rect class="d2" x="90" y="64" width="66" height="24" rx="2"/><path class="d1" d="M100 42h.01M100 76h.01M110 42h32M110 76h32"/><path class="d1" d="M160 42h22c12 0 12-23 24-23h20M160 59h46M160 76h22c12 0 12 23 24 23h20"/><path class="d1" d="M212 19l-6-4M212 19l-6 4M212 59l-6-4M212 59l-6 4M212 99l-6-4M212 99l-6 4"/><g class="d2"><rect x="216" y="4" width="44" height="30" rx="2"/><rect x="216" y="44" width="44" height="30" rx="2"/><rect x="216" y="84" width="44" height="30" rx="2"/></g><path class="d1" d="M223 13h30M223 20h12M223 53h18M223 60h28M223 93h24M223 100h30"/><text class="dt" x="272" y="16">for A</text><text class="dt" x="272" y="56">for B</text><text class="dt" x="272" y="96">for C</text></svg>
-          <p class="says">Each visitor gets a page built on request, after it checks who they are and looks something up. That is <b>dynamic</b>. Good for anything with firm data, a login, or a database.</p>
+          <p class="like">Like a <b>staffed desk</b> in the same lobby.</p>
+          <svg class="dia" viewBox="0 0 360 130" fill="none" aria-hidden="true"><g class="d1"><circle cx="16" cy="18" r="7"/><path d="M6 40a10 10 0 0 1 20 0"/><circle cx="16" cy="62" r="7"/><path d="M6 84a10 10 0 0 1 20 0"/><circle cx="16" cy="106" r="7"/><path d="M6 128a10 10 0 0 1 20 0"/></g><path class="d1" d="M32 24 62 48M32 66h30M32 110 62 82"/><path class="d1" d="M64 49l-7 1M64 49l-2-7M64 66l-6-4M64 66l-6 4M64 81l-2 7M64 81l-7-1"/><circle class="d1" cx="120" cy="30" r="10"/><path class="d1" d="M104 45a16 16 0 0 1 32 0"/><rect class="d2" x="72" y="45" width="96" height="42" rx="2"/><path class="d1" d="M72 57h96"/><rect class="d3" x="80" y="63" width="16" height="13" rx="1.5"/><circle class="d3" cx="88" cy="69.5" r="1.8"/><text class="dt" x="72" y="114">ONE DESK.</text><text class="dt" x="72" y="127">DIFFERENT FOR EACH.</text><rect class="d1" x="184" y="26" width="42" height="80" rx="2"/><path class="d1" d="M184 53h42M184 80h42M197 40h16M197 67h16M197 94h16"/><path class="d1" d="M170 66h12M182 66l-6-4M182 66l-6 4"/><path class="d1" d="M228 42 244 23M228 66h16M228 90 244 109"/><path class="d1" d="M246 22l1 7M246 22l-7 2M246 66l-6-4M246 66l-6 4M246 110l-7-2M246 110l1-7"/><g class="d2"><rect x="250" y="7" width="84" height="30" rx="2"/><rect x="250" y="51" width="84" height="30" rx="2"/><rect x="250" y="95" width="84" height="30" rx="2"/></g><path class="d1" d="M260 18h64M260 27h30"/><path class="d1" d="M260 59h64M260 67h48M260 75h64"/><path class="d1" d="M295 108h34M295 117h24"/><rect class="d3" x="259" y="101" width="30" height="18" rx="1"/></svg>
+          <p class="says">Someone is there. They check your badge, pull the right file, and note down what you tell them — so every visitor leaves with a different answer. That is <b>dynamic</b>. Good for firm data, logins, anything with a database.</p>
           <dl>
             <dt>Who sees it</dt><dd><b>Only the office.</b> Behind firm accounts, and IT can audit it.</dd>
             <dt>Address</dt><dd><code>project.azurestaticapps.net</code></dd>
             <dt>Needs</dt><dd>An IT request, a budget, an approval.</dd>
           </dl>
-          <p class="term">Front end + back end — the room behind the desk</p>
+          <p class="term">Front end + back end — the desk, and the room behind it</p>
         </div>
       </div>
 
